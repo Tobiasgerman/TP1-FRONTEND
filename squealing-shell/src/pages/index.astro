@@ -2,36 +2,266 @@
 <html>
   <head>
     <title>TICetario</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..900&display=swap" rel="stylesheet">
+
   </head>
 
-  
+<body>
 
-  <body>
+<header>
+<h1>TICetario</h1>
+<p class="Slogan">El recetario de todos los tiqueros.</p>
+</header>
 
-    <h1>TICetario</h1>
-    <p>El recetario de todos los tiqueros.</p>
-     
-	 <div class="catalogo">
-		<div class="card1">
-			<p>Comida 1</p>
-		</div>
-	 </div>
-    
 
-    <script>
-      
-    </script>
-	<style>
-	body {
-		font-family:  "Nunito Sans", sans-serif;
-		background-color: blue	;
-	}
-	</style>
+<main>
 
-  </body>
+<!-- BUSCADOR Y FILTROS -->
+
+<section class="controles">
+
+<input type="text" id="buscador" placeholder="Buscar comida...">
+
+<select id="filtro">
+
+<option value="todos">Todos</option>
+<option value="bebida">Bebidas</option>
+<option value="dulce">Dulces</option>
+<option value="salada">Saladas</option>
+
+</select>
+
+</section>
+
+
+
+<!-- CATALOGO -->
+
+<section class="catalogo">
+
+<article class="card" data-categoria="bebida">
+<p>Coca Zero</p>
+</article>
+
+<article class="card" data-categoria="bebida">
+<p>Monster</p>
+</article>
+
+<article class="card" data-categoria="bebida">
+<p>Mate</p>
+</article>
+
+<article class="card" data-categoria="bebida">
+<p>Sprite</p>
+</article>
+
+<article class="card" data-categoria="bebida">
+<p>Fanta</p>
+</article>
+
+<article class="card" data-categoria="dulce">
+<p>Rasta</p>
+</article>
+
+<article class="card" data-categoria="dulce">
+<p>Donsatur</p>
+</article>
+
+<article class="card" data-categoria="dulce">
+<p>Oreo</p>
+</article>
+
+<article class="card" data-categoria="dulce">
+<p>KitKat</p>
+</article>
+
+<article class="card" data-categoria="dulce">
+<p>Kinder Bueno</p>
+</article>
+
+<article class="card" data-categoria="salada">
+<p>Pancho</p>
+</article>
+
+<article class="card" data-categoria="salada">
+<p>Empanadas</p>
+</article>
+
+<article class="card" data-categoria="salada">
+<p>Sanguche de Milanesa</p>
+</article>
+
+<article class="card" data-categoria="salada">
+<p>Pizza</p>
+</article>
+
+<article class="card" data-categoria="salada">
+<p>Hamburguesa</p>
+</article>
+
+</section>
+
+</main>
+
+
+
+<script>
+
+// BUSQUEDA
+
+const buscador = document.getElementById("buscador") as HTMLInputElement
+const filtro = document.getElementById("filtro") as HTMLSelectElement
+const cards = document.querySelectorAll(".card") as NodeListOf<HTMLElement>
+
+
+// BUSQUEDA
+
+buscador.addEventListener("input", () => {
+
+const texto = buscador.value.toLowerCase()
+
+cards.forEach(card => {
+
+const nombre = card.innerText.toLowerCase()
+
+if(nombre.includes(texto)){
+card.style.display = "block"
+}else{
+card.style.display = "none"
+}
+
+})
+
+})
+
+
+
+
+// FILTRO
+
+filtro.addEventListener("change", () => {
+
+const categoria = filtro.value
+
+cards.forEach(card => {
+
+if(categoria === "todos"){
+card.style.display="block"
+return
+}
+
+if(card.dataset.categoria === categoria){
+card.style.display="block"
+}else{
+card.style.display="none"
+}
+
+})
+
+})
+
+
+</script>
+
+
+
+<style>
+
+body{
+font-family:"Nunito Sans", sans-serif;
+background-color:blue;
+color:white;
+margin:0;
+}
+
+h1{
+font-size:50px;
+text-align:center;
+border:2px solid black;
+border-radius:100px;
+padding:10px;
+}
+
+.Slogan{
+text-align:center;
+font-size:30px;
+}
+
+
+
+/* CONTROLES */
+
+.controles{
+text-align:center;
+margin:20px;
+}
+
+input,select{
+padding:10px;
+font-size:16px;
+margin:5px;
+}
+
+
+
+/* GRID */
+
+.catalogo{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+padding:20px;
+
+}
+
+
+
+/* CARDS */
+
+.card{
+
+background:white;
+
+color:black;
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width:700px){
+
+.catalogo{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:35px;
+}
+
+}
+
+</style>
+
+</body>
 </html>
-
-
