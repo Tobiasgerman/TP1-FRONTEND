@@ -19,9 +19,9 @@
 
 <main>
 
-<!-- BUSCADOR Y FILTROS -->
 
-<section class="controles">
+
+  <section class="controles">
 
 <input type="text" id="buscador" placeholder="Buscar comida...">
 
@@ -38,7 +38,7 @@
 
 
 
-<!-- CATALOGO -->
+
 
 <section class="catalogo">
 
@@ -110,14 +110,14 @@
 
 <script>
 
-// BUSQUEDA
+
 
 const buscador = document.getElementById("buscador") as HTMLInputElement
 const filtro = document.getElementById("filtro") as HTMLSelectElement
 const cards = document.querySelectorAll(".card") as NodeListOf<HTMLElement>
 
 
-// BUSQUEDA
+
 
 buscador.addEventListener("input", () => {
 
@@ -140,7 +140,7 @@ card.style.display = "none"
 
 
 
-// FILTRO
+
 
 filtro.addEventListener("change", () => {
 
@@ -192,7 +192,7 @@ font-size:30px;
 
 
 
-/* CONTROLES */
+
 
 .controles{
 text-align:center;
@@ -207,7 +207,7 @@ margin:5px;
 
 
 
-/* GRID */
+
 
 .catalogo{
 
@@ -223,7 +223,7 @@ padding:20px;
 
 
 
-/* CARDS */
+
 
 .card{
 
@@ -247,7 +247,7 @@ transform:scale(1.05);
 
 
 
-/* RESPONSIVE */
+
 
 @media (max-width:700px){
 
