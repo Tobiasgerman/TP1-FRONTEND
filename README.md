@@ -6,3 +6,9 @@
 
 3- Comenze con la parte de la estructuracion del proyecto HTML, CSS, JS.
 
+4- Pense cuales iban a ser los elementos que iban a estar en el catalogo
+
+5- Hice el grid y toda la parte de estructuras del css
+
+6- Avanze con el JS, Dom y la manipulacion de los elementos
+
