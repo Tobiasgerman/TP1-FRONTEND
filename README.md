@@ -12,3 +12,6 @@
 
 6- Avanze con el JS, Dom y la manipulacion de los elementos
 
+7- Detalles Finales.
+
+Cuenta con una pagina principal, 3 secciones (header, main y footer). Un responsive basico que se basicamente se adapta al tamaño de la pantalla y una estrcutura de Js basica.
