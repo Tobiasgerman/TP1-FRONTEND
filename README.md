@@ -1,4 +1,12 @@
 # TP1-FRONTEND
+
+Autoria: Tobias German, 5 D.
+Tematica: Catalogo Comidas.
+Items que resuelve:
+- Pagina Principal
+- 3 Secciones (Header, Main y Footer)
+- Responsive 
+- Algun comportamiento con Js (Filtros, Categorias)
  
 1- Comenze con la creacion del proyecto de astro, la creacion del repositorio y configuracion del VS Code.
 
@@ -14,4 +22,3 @@
 
 7- Detalles Finales.
 
-Cuenta con una pagina principal, 3 secciones (header, main y footer). Un responsive basico que se basicamente se adapta al tamaño de la pantalla y una estrcutura de Js basica.
